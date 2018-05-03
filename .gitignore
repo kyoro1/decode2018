@@ -1,5 +1,16 @@
 ## no need to save
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
-__pycache__/*
+*/__pycache__/*
+## Image data
 Images/Detection/FasterRCNN/AlexNet_ImageNet_Caffe.model
+Images/DataSets/Grocery/*.txt
+Images/DataSets/Grocery/negative/*
+Images/DataSets/Grocery/positive/*
+Images/DataSets/Grocery/testImages/*
+Images/Detection/FastRCNN/__pycache__/*
+Images/Detection/FasterRCNN/__pycache__/*
+Images/Detection/utils/__pycache__/*
+Images/Detection/utils/annotations/__pycache__/*
+Images/Detection/utils/configs/__pycache__/*
+Images/Detection/utils/rpn/__pycache__/*
