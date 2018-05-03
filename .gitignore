@@ -1,3 +1,5 @@
 ## no need to save
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+__pycache__/*
+Images/Detection/FasterRCNN/AlexNet_ImageNet_Caffe.model
