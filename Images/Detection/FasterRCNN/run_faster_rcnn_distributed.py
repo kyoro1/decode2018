@@ -11,6 +11,7 @@ from FasterRCNN_train_distributed import prepare, train_faster_rcnn, store_eval_
 from FasterRCNN_eval import compute_test_set_aps, FasterRCNN_Evaluator
 from utils.config_helpers import merge_configs
 from utils.plot_helpers import plot_test_set_results
+import datetime
 
 def get_configuration():
     # load configs for detector, base network and data set
@@ -29,10 +30,13 @@ if __name__ == '__main__':
     cfg = get_configuration()
     prepare(cfg, False)
 #    cntk.device.try_set_default_device(cntk.device.gpu(cfg.GPU_ID))
-    cntk.device.try_set_default_device(cntk.device.cpu())
+#    cntk.device.try_set_default_device(cntk.device.cpu())
 
     # train and test
+    before = datetime.datetime.now()
     trained_model = train_faster_rcnn(cfg)
+    after = datetime.datetime.now()
+    print("Training process time: {0}".format(after-before))
     eval_results = compute_test_set_aps(trained_model, cfg)
 
     # write AP results to output

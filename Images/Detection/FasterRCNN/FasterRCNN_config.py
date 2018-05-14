@@ -53,17 +53,15 @@ __C.CNTK.FRCN_LR_PER_SAMPLE = [0.001] * 6 + [0.0001] * 2
 __C.INPUT_ROIS_PER_IMAGE = 50
 __C.IMAGE_WIDTH = 850
 __C.IMAGE_HEIGHT = 850
-#__C.IMAGE_WIDTH = 1920
-#__C.IMAGE_HEIGHT = 1080
 
 # Sigma parameter for smooth L1 loss in the RPN and the detector (DET)
 __C.SIGMA_RPN_L1 = 3.0
 __C.SIGMA_DET_L1 = 1.0
 
 # NMS threshold used to discard overlapping predicted bounding boxes
-__C.RESULTS_NMS_THRESHOLD = 0.8
+__C.RESULTS_NMS_THRESHOLD = 0.5
 # all bounding boxes with a score lower than this threshold will be considered background
-__C.RESULTS_NMS_CONF_THRESHOLD = 0.7
+__C.RESULTS_NMS_CONF_THRESHOLD = 0.0
 
 # Enable plotting of results generally / also plot background boxes / also plot unregressed boxes
 __C.VISUALIZE_RESULTS = False
@@ -85,7 +83,7 @@ __C.TRAIN_CONV_LAYERS = True
 
 # RPN parameters
 # IOU >= thresh: positive example
-__C.TRAIN.RPN_POSITIVE_OVERLAP = 0.9
+__C.TRAIN.RPN_POSITIVE_OVERLAP = 0.7
 # IOU < thresh: negative example
 __C.TRAIN.RPN_NEGATIVE_OVERLAP = 0.3
 # If an anchor statisfied by positive and negative conditions set to negative
@@ -95,7 +93,7 @@ __C.TRAIN.RPN_FG_FRACTION = 0.5
 # Total number of examples
 __C.TRAIN.RPN_BATCHSIZE = 256
 # NMS threshold used on RPN proposals
-__C.TRAIN.RPN_NMS_THRESH = 0.9
+__C.TRAIN.RPN_NMS_THRESH = 0.7
 # Number of top scoring boxes to keep before apply NMS to RPN proposals
 __C.TRAIN.RPN_PRE_NMS_TOP_N = 12000
 # Number of top scoring boxes to keep after applying NMS to RPN proposals
@@ -121,7 +119,7 @@ __C.BBOX_NORMALIZE_MEANS = (0.0, 0.0, 0.0, 0.0)
 __C.BBOX_NORMALIZE_STDS = (0.1, 0.1, 0.2, 0.2)
 
 # Distributed Learning
-__C.DISTRIBUTED_FLG = False     # In case of distributed learning, set 'True'
+__C.DISTRIBUTED_FLG = True      # In case of distributed learning, set 'True'
 __C.NUM_QUANTIZATION_BITS = 32  # set for distributed learner
 __C.WARM_UP = 0                 # set for distributed learner
 
@@ -132,7 +130,7 @@ __C.WARM_UP = 0                 # set for distributed learner
 __C.TEST = edict()
 
 ## NMS threshold used on RPN proposals
-__C.TEST.RPN_NMS_THRESH = 0.9
+__C.TEST.RPN_NMS_THRESH = 0.7
 ## Number of top scoring boxes to keep before apply NMS to RPN proposals
 __C.TEST.RPN_PRE_NMS_TOP_N = 6000
 ## Number of top scoring boxes to keep after applying NMS to RPN proposals
