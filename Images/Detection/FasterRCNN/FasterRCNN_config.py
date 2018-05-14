@@ -120,6 +120,10 @@ __C.BBOX_NORMALIZE_TARGETS = True
 __C.BBOX_NORMALIZE_MEANS = (0.0, 0.0, 0.0, 0.0)
 __C.BBOX_NORMALIZE_STDS = (0.1, 0.1, 0.2, 0.2)
 
+# Distributed Learning
+__C.DISTRIBUTED_FLG = False     # In case of distributed learning, set 'True'
+__C.NUM_QUANTIZATION_BITS = 32  # set for distributed learner
+__C.WARM_UP = 0                 # set for distributed learner
 
 #
 # Testing parameters
